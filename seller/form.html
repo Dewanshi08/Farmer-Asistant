@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+	<script type="text/javascript">
+		function dynamic() {
+			var x = document.getElementById('types').value;
+			var d = document.getElementById('fert');
+			var c= document.getElementById('child');
+			alert("1");
+			d.removeChild(c);
+			alert("2");
+			var c = document.createElement("div");
+			c.setAttribute("id","child");
+			d.appendChild(c);
+			if(x==1)
+			{
+				var t = document.createTextNode("kg");
+				c.appendChild(t);
+			}
+			else
+			{
+				var t = document.createTextNode("Number");
+				c.appendChild(t);
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<select id="types" onchange="dynamic()">
+		<option value="1">fertilizer</option>
+		<option value="2">machinery</option>
+	</select>
+
+	<div id="fert">
+		<div id="child">
+			
+		</div>
+	</div>
+</body>
+</html>

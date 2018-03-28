@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Farmer Registeration Form</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="../js/form_validation.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<style type="text/css">
+		#h{
+			font-size: 30px;
+			font-style: bold;
+		}
+	</style>
+</head>
+<body>
+
+	<!--==========================
+				NAVBAR
+	============================-->
+
+  <div class="header" id="home">
+		<div class="container">
+		<div class="header-top">
+		<div class="top-menu">
+		<span class="menu"><img src="images/nav.png" alt=""/> </span>
+		<ul>
+   	<li><a href="../index.html">home</a></li><label>/</label>
+    <li><a href="../index.html	#About Us">About</a></li><label>/</label>
+   	<li><a href="../index.html	#contact">Contact</a></li>
+    </ul>
+     <!-- script for menu -->
+				
+		 <script>
+		 $("span.menu").click(function(){
+		 $(".top-menu ul").slideToggle("slow" , function(){
+		 });
+		 });
+		 </script>
+	<!-- //script for menu -->
+
+
+     </div>
+	
+
+		<div class="clearfix"></div>
+	
+	</div>
+	<!--==========================
+			REGISTRATION FORM
+	============================-->
+	
+	<section id="form" style="padding-top: 20px;">
+		<div class="container">
+		<div class="row">
+			<center><div id="h">Farmer Registration Form</div></center>
+			<div class="col-sm-8 col-sm-offset-2" style="background-color: #e6efef; padding-top: 2%;">
+				
+				<form action="../server-scripts/farmer-registration-onsubmit.php" method="POST" >
+					<div class="form-group" style="padding-top:1%;">
+						<fieldset>
+			      			<legend>Personal Details:</legend>
+			      			<div class="col-sm-12">
+					      		<div class="row">
+					      			<div class="col-sm-6">
+							      		<div class="form-group">
+							    			<label for="fname">Firstname<p id="s" style="display:inline">*</p></label>
+							    			<div class="input-group">
+							    				<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							      				<input type="text" class="form-control" id="fname" name="fname" placeholder="Enter your firstname" required>
+							      			</div>
+							      		</div>
+							      	</div>
+
+							      	<div class="col-sm-6">
+							      		<div class="form-group">
+							    			<label for="lname">Lastname<p id="s" style="display:inline">*</p></label>
+							    			<div class="input-group">
+							    				<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							    				<input type="text" class="form-control" id="lname" name="lname" placeholder="Enter your lastname" required>
+							      			</div>
+							      		</div>
+							      	</div>
+							    </div>
+
+							    <div class="row">
+					      			<div class="col-sm-6">
+							      		<div class="form-group">
+							    			<label for="mobile">Mobile No<p id="s" style="display:inline">*</p></label>
+							    			<div class="input-group">
+							    				<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							      				<input type="text" class="form-control" id="mobile" name="mobile" placeholder="Enter your mobile number" required onchange="phonenumber()">
+							      			</div>
+							      		</div>
+							      	</div>
+
+							      	<div class="col-sm-6">
+							      		<div class="form-group">
+							    			<label for="aadhar">Aadhaar No<p id="s" style="display:inline">*</p></label>
+							    			<div class="input-group">
+							    				<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							    				<input type="text" class="form-control" id="aadhar" name="aadhar" placeholder="Enter your aadhar number" required
+							    				>
+							      			</div>
+							      		</div>
+							      	</div>
+							    </div>
+
+				      			<div class="form-group">
+				    				<label for="address">Address<p id="s" style="display:inline">*</p></label>
+				    			
+
+				    			<div class="row">
+					    			<div class="col-xs-3">
+					    				<input type="text" class="form-control" name="flat_no" id="b_no" placeholder="Flat No.">
+					    			</div>
+					    			<div class="col-xs-9">		
+					    					<input type="text" class="form-control" name="building_name" id="b_name" placeholder="Building Name">
+					    			</div>
+
+					    			<div class="col-xs-3" style="padding-top: 2%;">
+					    				<input type="text" class="form-control" name="street_no" id="s_no" placeholder="Street No.">
+					    			</div>
+
+					    			<div class="col-xs-9" style="padding-top: 2%;">
+					    				<input type="text" class="form-control" id="s_name" name="street_name" placeholder="Street Name">
+					    			</div>
+					    
+					    			<div class="col-xs-3" style="padding-top: 2%;">
+					    				<input type="text" class="form-control" name="city" id="city" placeholder="City" required>
+					    			</div>
+
+					    			<div class="col-xs-4" style="padding-top: 2%;">
+					    				<input type="text" class="form-control" name="p_code" id="p_code" placeholder="Pincode" required onchange="pincode()">
+					    			</div>
+
+					    			<div class="col-xs-5" style="padding-top: 2%;">
+					    				<input type="text" class="form-control" name="state" id="state" placeholder="State" required>
+					    			</div>
+				      			</div>
+					      	</div>
+			      		</fieldset>
+			      	</div>
+
+			      	<div class="form-group" style="padding-top:1%;">
+						<fieldset>
+			      			<legend>Account Details:</legend>
+			      			<div class="col-sm-12">
+					      		<div class="row">
+					      			<div class="col-sm-12">
+							      		<div class="form-group">
+							    			<label for="acno">Account Holder Name<p id="s" style="display:inline">*</p></label>
+							    			<div class="input-group">
+							    				<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							      				<input type="text" class="form-control" id="acholdname" name="acholdname" placeholder="Enter Account Holder Name" required>
+							      			</div>
+							      		</div>
+							      	</div>
+							    </div>
+
+							    <div class="row">
+					      			<div class="col-sm-12">
+							      		<div class="form-group">
+							    			<label for="mobile">Account Number<p id="s" style="display:inline">*</p></label>
+							    			<div class="input-group">
+							    				<span class="input-group-addon"><i class="glyphicon glyphicon-piggy-bank"></i></span>
+							      				<input type="text" class="form-control" id="mobile" name="mobile" placeholder="Enter your account number" required onchange="accountnumber()">
+							      			</div>
+							      		</div>
+							      	</div>
+							    </div>
+
+							    <div class="row">
+					      			<div class="col-sm-12">
+							      		<div class="form-group">
+							    			<label for="mobile">Branch Name<p id="s" style="display:inline">*</p></label>
+							    			<div class="input-group">
+							    				<span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+							      				<input type="text" class="form-control" id="mobile" name="mobile" placeholder="Enter your bank's branch" required>
+							      			</div>
+							      		</div>
+							      	</div>
+							    </div>
+			      		</fieldset>
+			      	</div>
+
+
+			      	<div class="form-group">
+			      		<fieldset>
+			      			<legend>Email and Password</legend>
+			      			<div class="col-sm-12">
+					      		<div class="form-group">
+					    			<label for="email">Email<p id="s" style="display:inline">*</p></label>
+					    			<div class="input-group">
+					    				<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+					      				<input type="text" name="email" class="form-control" id="email" placeholder="Enter email" required onchange="ValidateEmail()">
+					      			</div>
+					      		</div>
+
+						      	<div class="row">
+					      			<div class="col-sm-6">
+							      		<div class="form-group">
+							    			<label for="password">Password<p id="s" style="display:inline">*</p></label>
+							    			<div class="input-group">
+					    						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+					      						<input type="password" name="password" class="form-control" id="password" placeholder="Enter your password" required>
+					      					</div>
+							      			
+							      		</div>
+							      	</div>
+
+							      	<div class="col-sm-6">
+										<div class="form-group">
+							    			<label for="cpassword">Confirm Password<p id="s" style="display:inline">*</p></label>
+							      			<div class="input-group">
+					    						<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+					      						<input type="password" class="form-control" id="cpassword" placeholder="Confirm your password" required onchange="checkPass()">
+					      					</div>
+
+							      		</div>
+							      	</div>
+						      	</div>
+						    </div>
+			      		</fieldset> 
+			      		<fieldset>
+			      		<legend></legend>
+			      		<div class="col-xs-offset-2 col-xs-4">
+							<div class="form group">
+								<input type="reset" class="btn btn-reset" value="Reset" id="reset" style="width: 90%; background-color: #8bb6ba; color: black;">  
+		                    </div>
+		                </div>
+		                <div class="col-xs-4">
+							<div class="form group">
+		                        <input type="submit" class="btn btn-submit" value="Submit" id="submit" style="width: 90%; background-color: #88b73c; color: white;">
+		                    </div>
+		                </div>
+		                </fieldset>
+		                <hr>
+			      	</div>
+		      	</form>
+			</div>
+			</fieldset>
+		</div>
+	</div>
+	</section>
+
+	<!--==========================
+				FOOTER
+	============================-->
+
+	<div class="footer" style="margin-top: 10%;"></div>
+</body>
+</html>
